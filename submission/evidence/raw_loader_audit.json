@@ -1,0 +1,26 @@
+{
+  "variant": "raw",
+  "copied_images": 224,
+  "usable_images": 213,
+  "cache_results": [
+    216,
+    6,
+    13,
+    11,
+    224
+  ],
+  "loader_messages": [
+    "\u001b[34m\u001b[1mtrain: \u001b[0mC:\\Users\\truon\\VisualCode\\K5-L23-Day09-AutoQC-Pipeline-Lab\\work\\train\\raw\\train\\images\\img_0010.jpg: ignoring corrupt image/label: cannot identify image file 'C:\\\\Users\\\\truon\\\\VisualCode\\\\K5-L23-Day09-AutoQC-Pipeline-Lab\\\\work\\\\train\\\\raw\\\\train\\\\images\\\\img_0010.jpg'",
+    "\u001b[34m\u001b[1mtrain: \u001b[0mC:\\Users\\truon\\VisualCode\\K5-L23-Day09-AutoQC-Pipeline-Lab\\work\\train\\raw\\train\\images\\img_0014.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates []",
+    "\u001b[34m\u001b[1mtrain: \u001b[0mC:\\Users\\truon\\VisualCode\\K5-L23-Day09-AutoQC-Pipeline-Lab\\work\\train\\raw\\train\\images\\img_0020.jpg: ignoring corrupt image/label: Label class 93 exceeds dataset class count 4. Possible class labels are 0-3",
+    "\u001b[34m\u001b[1mtrain: \u001b[0mC:\\Users\\truon\\VisualCode\\K5-L23-Day09-AutoQC-Pipeline-Lab\\work\\train\\raw\\train\\images\\img_0022.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates []",
+    "\u001b[34m\u001b[1mtrain: \u001b[0mC:\\Users\\truon\\VisualCode\\K5-L23-Day09-AutoQC-Pipeline-Lab\\work\\train\\raw\\train\\images\\img_0099.jpg: ignoring corrupt image/label: negative label values [-1.]",
+    "\u001b[34m\u001b[1mtrain: \u001b[0mC:\\Users\\truon\\VisualCode\\K5-L23-Day09-AutoQC-Pipeline-Lab\\work\\train\\raw\\train\\images\\img_0104.jpg: ignoring corrupt image/label: Label class 7 exceeds dataset class count 4. Possible class labels are 0-3",
+    "\u001b[34m\u001b[1mtrain: \u001b[0mC:\\Users\\truon\\VisualCode\\K5-L23-Day09-AutoQC-Pipeline-Lab\\work\\train\\raw\\train\\images\\img_0117.jpg: ignoring corrupt image/label: negative label values [-1.]",
+    "\u001b[34m\u001b[1mtrain: \u001b[0mC:\\Users\\truon\\VisualCode\\K5-L23-Day09-AutoQC-Pipeline-Lab\\work\\train\\raw\\train\\images\\img_0136.jpg: ignoring corrupt image/label: image file is truncated (26 bytes not processed)",
+    "\u001b[34m\u001b[1mtrain: \u001b[0mC:\\Users\\truon\\VisualCode\\K5-L23-Day09-AutoQC-Pipeline-Lab\\work\\train\\raw\\train\\images\\img_0179.jpg: ignoring corrupt image/label: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.",
+    "\u001b[34m\u001b[1mtrain: \u001b[0mC:\\Users\\truon\\VisualCode\\K5-L23-Day09-AutoQC-Pipeline-Lab\\work\\train\\raw\\train\\images\\img_0194.jpg: ignoring corrupt image/label: Label class 4 exceeds dataset class count 4. Possible class labels are 0-3",
+    "\u001b[34m\u001b[1mtrain: \u001b[0mC:\\Users\\truon\\VisualCode\\K5-L23-Day09-AutoQC-Pipeline-Lab\\work\\train\\raw\\train\\images\\img_0199.jpg: ignoring corrupt image/label: Label class 4 exceeds dataset class count 4. Possible class labels are 0-3"
+  ],
+  "note": "Read only the training loader cache; source data and official result JSON are not changed."
+}

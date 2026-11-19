@@ -4,3 +4,8 @@
 *.png binary
 *.JPG binary
 *.pt binary
+
+# Preserve generated artifact bytes: hashes are part of the training provenance.
+submission/export/** -text whitespace=cr-at-eol
+submission/results/** -text whitespace=cr-at-eol
+submission/evidence/** -text whitespace=cr-at-eol

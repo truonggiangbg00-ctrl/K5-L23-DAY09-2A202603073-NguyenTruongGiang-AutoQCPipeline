@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "cases": [
+    "multi_error_drop_priority",
+    "blank_line_numbers_and_nonfinite_class",
+    "multiple_predictions_and_false_positive_line"
+  ],
+  "assertions": 6
+}

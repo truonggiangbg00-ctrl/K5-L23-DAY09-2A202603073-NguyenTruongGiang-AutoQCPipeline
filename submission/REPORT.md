@@ -1,36 +1,82 @@
-# Báo cáo Day 09 — <Họ và tên>, <MSHV>
-
-> Xoá mọi `TODO(học viên)` và dòng gợi ý. Mỗi ý trả lời bằng **số lấy từ `submission/reports/`**, kèm mẫu số. Cả báo cáo ~1–2 trang.
+# Báo cáo Day 09 — Nguyễn Trường Giang, 2A202603073
 
 ## 1. Kết luận trước
-TODO(học viên): pipeline kết luận **Release / Hold / Rework**? Bao nhiêu ảnh vào, bao nhiêu ảnh ra dataset? Lý do chính (1–3 câu).
+**Hold**, chưa phát hành. Nhận 224 ảnh raw, loại 19/224 ảnh ở intake; xuất **205 ảnh dưới dạng bản nháp**. Sau máy sửa và người duyệt mô phỏng 80/125 ảnh trong hàng đợi, còn **0 lỗi bắt buộc**, nhưng **38/205 ảnh (18,54%)** còn cảnh báo chưa duyệt, vượt ngưỡng 10%. Nguồn: `reports/01_intake.csv`, `08_summary.json`, `export/clean_v1/manifest.json`.
 
 ## 2. Lỗi và phân việc
-Lấy từ `02_error_list_v1` (gom theo mã lỗi). Cột "ai sửa": **máy** (autofix) hay **người** (hàng đợi); chỉ ghi những mã có mặt trong lô của bạn.
+Bảng lấy từ `02_error_list_v1.csv`: 208 bản ghi, gồm 19 lỗi intake và 189 bản ghi QC trên 205 ảnh được nhận. Cột số lượng là **số bản ghi / số ảnh khác nhau**; các mã có thể trùng ảnh nên không cộng số ảnh giữa các hàng. Lỗi intake dùng mẫu số 224 ảnh; các mã QC dùng 205 ảnh; lỗi tên lớp/thống kê thuộc cấp dataset.
 
-| Mã lỗi | Số ảnh/dòng | Ai sửa (máy/người) | Vì sao |
-|---|---:|---|---|
-| TODO(học viên) | | | |
+| Mã | Bản ghi / ảnh | Ai xử lý |
+|---|---:|---|
+| `BAD_CLASS_ID` | 6 / 6 | Máy |
+| `BAD_CLASS_NAME` | 2 / cấp dataset | Máy |
+| `BAD_FORMAT` | 3 / 3 | Máy |
+| `BAD_SIZE` | 3 / 3 | Máy |
+| `BOX_HUGE` | 3 / 3 | Người |
+| `BOX_OUT_OF_IMAGE` | 8 / 8 | Máy |
+| `BOX_TINY` | 6 / 4 | Người |
+| `BOX_ZERO` | 4 / 4 | Máy |
+| `CLASS_RARE` | 4 / cấp dataset | Người |
+| `CORRUPT_IMAGE` | 2 / 2 | Máy |
+| `DUP_BOX` | 7 / 7 | Máy |
+| `DUP_IMAGE_EXACT` | 8 / 8 | Máy |
+| `DUP_IMAGE_NEAR` | 2 / 2 | Máy |
+| `EMPTY_LABEL` | 12 / 12 | Người |
+| `LEAK_TEST` | 4 / 4 | Máy |
+| `MISSING_LABEL_FILE` | 6 / 6 | Người |
+| `POSSIBLE_FALSE_POS` | 29 / 27 | Người |
+| `POSSIBLE_LOOSE_BOX` | 28 / 24 | Người |
+| `POSSIBLE_MISSING` | 53 / 52 | Người |
+| `POSSIBLE_WRONG_CLASS` | 18 / 18 | Người |
 
-TODO(học viên): vì sao `05_review_queue.csv` xếp ảnh đầu hàng như vậy? Với ngân sách 80 ảnh, người xem được bao nhiêu lỗi ngữ nghĩa?
+Máy loại ảnh theo quy tắc, xóa dòng sai/lặp và cắt box tràn; người quyết định nội dung ngữ nghĩa và gán ảnh thiếu nhãn. `03_fixes.csv` có 35 mục: 20 xóa dòng, 8 cắt box, 1 sửa tên lớp và 6 chuyển người gán; 6 mục cuối **không phải nhãn máy tự tạo**. Hàng đợi đứng đầu là `img_0020` (11,524 điểm: sai lớp + thiếu nhãn + đã xóa dòng), rồi 6 ảnh `NEEDS_LABEL` (10 điểm/ảnh). Trong 80 ảnh đã duyệt có 74 ảnh với 94 cảnh báo ngữ nghĩa từ v2; đây là số cảnh báo được xem, không phải số lỗi thật được xác nhận. 71 cảnh báo vẫn hiện ở v3, nhưng gate chỉ tính ảnh chưa duyệt.
 
 ## 3. Calibration (2 ngưỡng)
-| Tham số | Khởi đầu | Đã chọn | Precision / Recall (trước → sau) | Lý do (đánh đổi) |
-|---|---|---|---|---|
-| `duplicates.phash_dist` | 2 | TODO(học viên) | | |
-| `second_opinion.conf` | 0.25 | TODO(học viên) | | |
+Nguồn: `calibration/calibration.json` và `calibration_report.md`, sinh bằng hai sweep; chỉ thay hai khóa cho phép.
 
-TODO(học viên): **một chỗ calibration có thể đánh lừa bạn**, kèm bằng chứng từ dữ liệu của bạn (vd. mở xem vài cặp ảnh bị cho là trùng; số ảnh bị loại ở bước 1 có hợp lý không?).
+| Tham số | Trước → sau | Precision / Recall trước → sau | Lý do |
+|---|---|---|---|
+| `phash_dist` | 2 → **4** | NEAR: 1,000 / 0,500 → 1,000 / 0,667 | Ngưỡng nhỏ nhất tăng recall; tránh loại nhầm ảnh tốt. EXACT vẫn 1/1. |
+| `second_opinion.conf` | 0,25 → **0,6** | WRONG_CLASS: 0,556 / 0,833 → 0,625 / 0,833; MISSING: 0,500 / 1,000 → 0,571 / 1,000 | Giảm FP lần lượt 4→3 và 8→6, giữ recall hai nhóm ưu tiên. |
 
-## 4. Cửa chặn và điều pipeline KHÔNG bắt được
-TODO(học viên): (a) chứng minh gate chặn đúng: chạy `python -m pipeline.run --budget 0 --reports work/rep_nb --export-dir work/exp_nb` (không có người duyệt nên ảnh thiếu file nhãn còn nguyên), chỉ ra kết luận **Rework**, mã thoát 20 và việc **không xuất** dataset. (Đừng sửa tay `work/run/ds`: pipeline dựng lại thư mục này từ raw mỗi lần chạy.) (b) ≥ 2 điểm mù có bằng chứng (box lỏng nhẹ, nhầm lớp mà model lớn cũng nhầm, ảnh trùng biến đổi mạnh…).
+Đánh đổi: LOOSE_BOX giảm P/R từ 0,286/0,400 xuống 0,200/0,200 (chỉ bắt 1/5 lỗi chèn). FALSE_POS giữ 0,312/1,000 vì dùng `fp_conf` riêng. Không tăng conf chỉ để ép Release.
 
-## 5. Train: raw vs clean (tùy chọn, chấm riêng)
-Chưa train: ghi "chưa chạy" và lý do, rồi bỏ qua phần còn lại của mục này. Nếu đã train: dán bảng từ `submission/results/comparison.md` (model, epoch, seed, số ảnh train mỗi biến thể).
+**Calib có thể đánh lừa:** ở pHash 16, calib cho NEAR P=1 và R=0,833; kiểm ảnh raw cho thấy `img_0011` (tennis) bị gộp với `img_0008` (trượt tuyết), khoảng cách 16. Vì vậy không chọn ngưỡng có F1 cao nhất một cách máy móc. Bằng chứng hình: `evidence/duplicate_pairs.jpg`. Ở ngưỡng chọn 4, raw có 8 trùng byte, 2 gần trùng, 4 rò rỉ test/val; không có đáp án toàn bộ raw nên không tuyên bố precision raw bằng 100%.
 
-TODO(học viên): chênh mAP50 (clean − raw) so với **độ lệch chuẩn giữa các seed**; kết luận **trung thực** (nằm trong nhiễu thì nói là chưa kết luận được); ≥ 2 giả thuyết giải thích (ảnh trùng/rò rỉ test trong `raw`, nhãn máy còn lại trong `clean`, test chỉ 100 ảnh…) và cách kiểm.
+## 4. Cửa chặn và điểm mù
+Thí nghiệm: `python -m pipeline.run --budget 0 --work work/run_nb --reports submission/evidence/no_review --export-dir work/exp_nb` cho **Rework, mã 20**, còn 6 `MISSING_LABEL_FILE`; không có `work/exp_nb/clean_v1/manifest.json`. Báo cáo được giữ riêng trong `evidence/no_review/`.
 
-## 6. Quyết định và ghi chú AI
-TODO(học viên): (a) quyết định cuối; nếu Hold/Rework cần làm gì để thành Release? (b) Dùng AI viết code? Ghi 3 dòng: prompt chính, cách bạn kiểm code AI, 1 lần AI sai. Không dùng: ghi "không dùng".
+Điểm mù có bằng chứng: (1) pHash 4 bỏ sót cặp biến đổi `img_0077`/`img_0223` (khoảng cách 6) và `img_0074`/`img_0084` (16), quan sát cùng cảnh; (2) checker bỏ sót 4/5 lỗi box lỏng và 1/6 lỗi sai lớp chèn trong calib. Release, nếu có, chỉ là đạt quy tắc gate, không bảo đảm nhãn đúng hoàn toàn.
 
-*(Thưởng +2, tùy chọn)* CVAT: lọc `width < 20`, ảnh/số box khớp, đối chiếu `BOX_TINY` (xem docs/CVAT_FILTER.md), 1 câu về `can_review`.
+Quan sát ảnh raw: `img_0001` thiếu box quanh người đứng bên phải ở giữa ảnh (đồng thời check báo box lặp dòng 3); `img_0042`/`img_0076` cùng cảnh xe buýt; `img_0077`/`img_0223` cùng cảnh với biến đổi hình. Hình tổng hợp 10 ảnh đã xem: `evidence/labels_contact.jpg`.
+
+## 5. Train: raw vs clean
+Đã chạy đủ **4 lượt, 20 epoch/lượt**, YOLO26n, ảnh 640 px, batch 4, seed 0 và 1 cho mỗi biến thể, trên RTX 3050 4 GB. Giữ cùng trọng số ban đầu, siêu tham số, gold_val 40 ảnh để chọn checkpoint và test 100 ảnh để đánh giá cuối. Kết quả do `scripts/train_compare.py` sinh; bảng dưới do `scripts/summarize_results.py` sinh.
+
+| biến thể | #ảnh train | số seed | map50 (TB ± độ lệch) | map50_95 (TB ± độ lệch) | precision (TB ± độ lệch) | recall (TB ± độ lệch) |
+|---|---|---|---|---|---|---|
+| raw | 224 | 2 | 0.623 ± 0.087 | 0.433 ± 0.046 | 0.682 ± 0.051 | 0.553 ± 0.121 |
+| clean | 205 | 2 | 0.680 ± 0.016 | 0.487 ± 0.006 | 0.811 ± 0.031 | 0.551 ± 0.030 |
+
+Chênh mAP50 (clean − raw) = **+0.057**.
+
+Số ảnh trong bảng là ảnh đã copy theo script. Loader thực tế dùng **213/224 raw** (bỏ 11 ảnh/nhãn hỏng) và **205/205 clean**. Bằng chứng: `evidence/raw_loader_audit.json`, `clean_loader_audit.json`. Không sửa dữ liệu gốc hay JSON kết quả để thay đổi số này.
+
+mAP50 theo seed: raw 0,5616 / 0,6844; clean 0,6684 / 0,6909. Chênh cùng seed lần lượt +0,1068 và +0,0065. Trung bình clean cao hơn khoảng 0,0567, nhưng thấp hơn độ lệch chuẩn raw khoảng 0,0868; chỉ hai seed và test nhỏ nên **chưa đủ bằng chứng để khẳng định mức cải thiện ổn định**. mAP50–95 tăng khoảng 0,0539 và precision tăng khoảng 0,1289; recall gần như không tăng (clean 0,551 so với raw 0,553). Không kết luận mọi mặt đều tốt hơn.
+
+Hai giả thuyết và cách kiểm: (1) sửa nhãn và duyệt 80 ảnh giúp giảm box thừa/sai lớp, tăng precision; kiểm bằng thí nghiệm ablation auto-only so với clean trên cùng tập ảnh và thêm seed. (2) raw chứa ảnh trùng/rò rỉ test/val (intake đã phát hiện 4 ảnh), còn loader tự bỏ 11 ảnh hỏng, nên chênh lệch còn do thành phần tập train; kiểm bằng các nhóm có cùng danh sách ảnh sau xử lý rò rỉ, cùng siêu tham số, và một tập test độc lập đã khóa. Chưa thực hiện hai thí nghiệm bổ sung này. Việc tiếp theo: thêm seed và duyệt cảnh báo còn lại; giữ dataset hiện tại ở trạng thái Hold.
+
+Tái lập: `evidence/training_protocol.json` chứa lệnh, phiên bản và checksum; `evidence/training_logs/` chứa đủ 20 epoch của từng lượt. Hai lượt clean cuối được chạy lại sau khi chuẩn hóa xuống dòng manifest về LF (nội dung JSON không đổi), để checksum byte của script train khớp checker gốc. Dấu vân tay cấu hình, manifest và script của bốn kết quả cuối được lưu trong protocol. Trọng số `best.pt` giữ trong `work/train/runs/`, không commit lên Git.
+
+## 6. Kết luận và cách sử dụng AI trong bài làm
+Giữ **Hold** và bản nháp 205 ảnh. Để đạt ngưỡng với mẫu số này cần dưới 21 ảnh chưa xử lý, tức ít nhất 18 trong 38 ảnh cảnh báo hiện tại phải được giải quyết, không phát sinh lỗi mới. Ngân sách 80 cố định trong lab: không tự tăng ngân sách, đổi ngưỡng gate hay sửa báo cáo để đạt Release; công việc còn lại cần vòng duyệt được dự án cho phép.
+
+Bài làm của học viên Nguyễn Trường Giang (2A202603073) được thực hiện với sự hỗ trợ của Codex. Em đưa ra yêu cầu hoàn thiện phần lõi trước, sau đó bổ sung thí nghiệm train raw–clean và chuẩn bị kết quả nộp bài. AI hỗ trợ giải thích yêu cầu, hướng dẫn từng bước, viết và chỉnh sửa code, xử lý lỗi môi trường, đồng thời tổng hợp dữ liệu từ các file kết quả thành bảng và báo cáo.
+
+Codex cũng hỗ trợ thực thi lệnh kiểm tra và train trên máy theo yêu cầu của em. Các số liệu trong báo cáo được lấy từ đầu ra của pipeline, log huấn luyện và script tổng hợp, kèm đường dẫn để đối chiếu. Bước “người duyệt” trong pipeline là bước mô phỏng theo cơ chế của bài lab; số 80 ảnh không thể hiện việc em tự duyệt thủ công toàn bộ số ảnh này.
+
+Yêu cầu chính khi dùng AI là hoàn thiện 4 stub theo docstring/test, giữ nguyên dữ liệu gốc, file mẫu và cấu hình cố định. Kết quả được kiểm bằng 79 test của đề, calibration, ảnh minh họa và thí nghiệm budget 0. Một lỗi môi trường đã gặp là lệnh cài thư viện thiếu chế độ UTF-8, gây UnicodeDecodeError trên Windows; cách xử lý là dùng `-X utf8`/`PYTHONUTF8=1`. Trước khi nộp, em cần đọc lại mã nguồn, đối chiếu các nhận xét với bằng chứng và bảo đảm có thể giải thích cách xử lý của từng module.
+
+Ghi chú tái lập Windows: checker gốc báo nhầm 2 lỗi ở chính `pipeline/calibrate.py` do so đường dẫn `\` với danh sách `/`. Trình chạy `scripts/check_submission_windows.py` chỉ chuẩn hóa phép so đường dẫn; giữ nguyên file đề và toàn bộ kiểm tra hash/test/cấu hình. Ba ca bổ sung (6 assert) ở `evidence/edge_cases.py` đã đạt.
+
+Kiểm tra cuối: `python -X utf8 scripts/check_submission_windows.py` đạt **79/79 test, 0 lỗi, 0 cảnh báo**, gồm cả train và checksum; log ở `evidence/final_validation.txt`.

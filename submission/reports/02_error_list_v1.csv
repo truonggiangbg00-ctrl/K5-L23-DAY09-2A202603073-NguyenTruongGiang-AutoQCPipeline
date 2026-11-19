@@ -1,0 +1,209 @@
+check,severity,code,image,line,message,extra
+images,error,CORRUPT_IMAGE,img_0010,,không mở được: UnidentifiedImageError,
+images,error,BAD_SIZE,img_0107,,cạnh ngắn 180px < 250px,"{""size"": [240, 180]}"
+images,error,BAD_SIZE,img_0113,,cạnh ngắn 226px < 250px,"{""size"": [240, 226]}"
+images,error,BAD_SIZE,img_0122,,cạnh ngắn 180px < 250px,"{""size"": [240, 180]}"
+images,error,CORRUPT_IMAGE,img_0136,,không mở được: OSError,
+duplicates,error,DUP_IMAGE_EXACT,img_0039,,trùng từng byte với img_0012,"{""of"": ""img_0012""}"
+duplicates,error,LEAK_TEST,img_0049,,trùng ảnh kho test/val: test/test_033.jpg,"{""of"": ""test/test_033.jpg""}"
+duplicates,error,DUP_IMAGE_NEAR,img_0076,,trùng gần đúng với img_0042 (phash 0),"{""of"": ""img_0042"", ""dist"": 0}"
+duplicates,error,DUP_IMAGE_EXACT,img_0080,,trùng từng byte với img_0071,"{""of"": ""img_0071""}"
+duplicates,error,DUP_IMAGE_EXACT,img_0102,,trùng từng byte với img_0082,"{""of"": ""img_0082""}"
+duplicates,error,DUP_IMAGE_NEAR,img_0143,,trùng gần đúng với img_0037 (phash 0),"{""of"": ""img_0037"", ""dist"": 0}"
+duplicates,error,DUP_IMAGE_EXACT,img_0156,,trùng từng byte với img_0147,"{""of"": ""img_0147""}"
+duplicates,error,DUP_IMAGE_EXACT,img_0162,,trùng từng byte với img_0054,"{""of"": ""img_0054""}"
+duplicates,error,LEAK_TEST,img_0167,,trùng ảnh kho test/val: test/test_044.jpg,"{""of"": ""test/test_044.jpg""}"
+duplicates,error,LEAK_TEST,img_0174,,trùng ảnh kho test/val: test/test_085.jpg,"{""of"": ""test/test_085.jpg""}"
+duplicates,error,DUP_IMAGE_EXACT,img_0203,,trùng từng byte với img_0145,"{""of"": ""img_0145""}"
+duplicates,error,DUP_IMAGE_EXACT,img_0207,,trùng từng byte với img_0182,"{""of"": ""img_0182""}"
+duplicates,error,LEAK_TEST,img_0221,,trùng ảnh kho test/val: test/test_009.jpg,"{""of"": ""test/test_009.jpg""}"
+duplicates,error,DUP_IMAGE_EXACT,img_0222,,trùng từng byte với img_0151,"{""of"": ""img_0151""}"
+missing_labels,error,MISSING_LABEL_FILE,img_0031,,ảnh không có file nhãn,
+missing_labels,error,MISSING_LABEL_FILE,img_0053,,ảnh không có file nhãn,
+missing_labels,error,MISSING_LABEL_FILE,img_0126,,ảnh không có file nhãn,
+missing_labels,error,MISSING_LABEL_FILE,img_0135,,ảnh không có file nhãn,
+missing_labels,error,MISSING_LABEL_FILE,img_0170,,ảnh không có file nhãn,
+missing_labels,error,MISSING_LABEL_FILE,img_0219,,ảnh không có file nhãn,
+missing_labels,warn,EMPTY_LABEL,img_0004,,file nhãn rỗng: ảnh nền hay thiếu nhãn?,
+missing_labels,warn,EMPTY_LABEL,img_0013,,file nhãn rỗng: ảnh nền hay thiếu nhãn?,
+missing_labels,warn,EMPTY_LABEL,img_0057,,file nhãn rỗng: ảnh nền hay thiếu nhãn?,
+missing_labels,warn,EMPTY_LABEL,img_0065,,file nhãn rỗng: ảnh nền hay thiếu nhãn?,
+missing_labels,warn,EMPTY_LABEL,img_0097,,file nhãn rỗng: ảnh nền hay thiếu nhãn?,
+missing_labels,warn,EMPTY_LABEL,img_0103,,file nhãn rỗng: ảnh nền hay thiếu nhãn?,
+missing_labels,warn,EMPTY_LABEL,img_0129,,file nhãn rỗng: ảnh nền hay thiếu nhãn?,
+missing_labels,warn,EMPTY_LABEL,img_0147,,file nhãn rỗng: ảnh nền hay thiếu nhãn?,
+missing_labels,warn,EMPTY_LABEL,img_0157,,file nhãn rỗng: ảnh nền hay thiếu nhãn?,
+missing_labels,warn,EMPTY_LABEL,img_0178,,file nhãn rỗng: ảnh nền hay thiếu nhãn?,
+missing_labels,warn,EMPTY_LABEL,img_0184,,file nhãn rỗng: ảnh nền hay thiếu nhãn?,
+missing_labels,warn,EMPTY_LABEL,img_0192,,file nhãn rỗng: ảnh nền hay thiếu nhãn?,
+label_format,error,DUP_BOX,img_0001,3,Box trùng với dòng trước cùng lớp,
+label_format,error,DUP_BOX,img_0006,2,Box trùng với dòng trước cùng lớp,
+label_format,error,BAD_FORMAT,img_0014,1,Dòng nhãn không hợp lệ: giá trị nan/inf,
+label_format,warn,BOX_HUGE,img_0018,1,Box chiếm diện tích quá lớn,
+label_format,error,BAD_CLASS_ID,img_0020,3,ID 93 ngoài danh sách lớp,
+label_format,error,BAD_FORMAT,img_0022,1,Dòng nhãn không hợp lệ: giá trị nan/inf,
+label_format,error,DUP_BOX,img_0024,8,Box trùng với dòng trước cùng lớp,
+label_format,warn,BOX_TINY,img_0026,6,Cạnh ngắn nhỏ hơn ngưỡng pixel,
+label_format,error,BOX_OUT_OF_IMAGE,img_0030,9,Box tràn 0.022998,"{""overflow"": 0.022998}"
+label_format,error,BOX_OUT_OF_IMAGE,img_0043,1,Box tràn 0.030000,"{""overflow"": 0.030000000000000027}"
+label_format,error,BOX_ZERO,img_0050,1,"Kích thước box không dương: 0.0, 0.396065",
+label_format,warn,BOX_TINY,img_0051,5,Cạnh ngắn nhỏ hơn ngưỡng pixel,
+label_format,error,BOX_ZERO,img_0066,3,"Kích thước box không dương: 0.076818, 0.0",
+label_format,warn,BOX_TINY,img_0069,2,Cạnh ngắn nhỏ hơn ngưỡng pixel,
+label_format,error,BOX_OUT_OF_IMAGE,img_0078,2,Box tràn 0.030000,"{""overflow"": 0.030000000000000027}"
+label_format,error,BOX_OUT_OF_IMAGE,img_0087,1,Box tràn 0.060000,"{""overflow"": 0.06000000000000005}"
+label_format,error,BOX_ZERO,img_0092,2,"Kích thước box không dương: 0.0, 0.090633",
+label_format,error,DUP_BOX,img_0094,13,Box trùng với dòng trước cùng lớp,
+label_format,error,BAD_CLASS_ID,img_0099,2,ID -1 ngoài danh sách lớp,
+label_format,error,BAD_CLASS_ID,img_0104,1,ID 7 ngoài danh sách lớp,
+label_format,error,BOX_OUT_OF_IMAGE,img_0108,1,Box tràn 0.030000,"{""overflow"": 0.03}"
+label_format,error,DUP_BOX,img_0109,2,Box trùng với dòng trước cùng lớp,
+label_format,error,BAD_CLASS_ID,img_0117,12,ID -1 ngoài danh sách lớp,
+label_format,warn,BOX_HUGE,img_0128,1,Box chiếm diện tích quá lớn,
+label_format,error,DUP_BOX,img_0141,2,Box trùng với dòng trước cùng lớp,
+label_format,error,BOX_OUT_OF_IMAGE,img_0144,1,Box tràn 0.060001,"{""overflow"": 0.06000050000000012}"
+label_format,error,BOX_OUT_OF_IMAGE,img_0152,1,Box tràn 0.030001,"{""overflow"": 0.030000500000000097}"
+label_format,warn,BOX_TINY,img_0161,2,Cạnh ngắn nhỏ hơn ngưỡng pixel,
+label_format,warn,BOX_TINY,img_0161,3,Cạnh ngắn nhỏ hơn ngưỡng pixel,
+label_format,warn,BOX_TINY,img_0161,4,Cạnh ngắn nhỏ hơn ngưỡng pixel,
+label_format,error,BAD_FORMAT,img_0179,1,"Dòng nhãn không hợp lệ: cần 5 cột, có 4",
+label_format,error,BOX_ZERO,img_0185,10,"Kích thước box không dương: 0.154531, 0.0",
+label_format,error,DUP_BOX,img_0193,7,Box trùng với dòng trước cùng lớp,
+label_format,error,BAD_CLASS_ID,img_0194,1,ID 4 ngoài danh sách lớp,
+label_format,warn,BOX_HUGE,img_0196,1,Box chiếm diện tích quá lớn,
+label_format,error,BAD_CLASS_ID,img_0199,7,ID 4 ngoài danh sách lớp,
+label_format,error,BOX_OUT_OF_IMAGE,img_0204,1,Box tràn 0.060000,"{""overflow"": 0.06}"
+class_names,error,BAD_CLASS_NAME,data.yaml,,tên lớp lạ: 'Person' (id 1),"{""id"": 1, ""name"": ""Person""}"
+class_names,error,BAD_CLASS_NAME,data.yaml,,tên lớp lạ: 'Bus' (id 3),"{""id"": 3, ""name"": ""Bus""}"
+stats,warn,CLASS_RARE,<dataset>,,lớp -1 chỉ có 2 box,"{""class"": ""-1"", ""n"": 2}"
+stats,warn,CLASS_RARE,<dataset>,,lớp 4 chỉ có 2 box,"{""class"": ""4"", ""n"": 2}"
+stats,warn,CLASS_RARE,<dataset>,,lớp 7 chỉ có 1 box,"{""class"": ""7"", ""n"": 1}"
+stats,warn,CLASS_RARE,<dataset>,,lớp 93 chỉ có 1 box,"{""class"": ""93"", ""n"": 1}"
+second_opinion,warn,POSSIBLE_MISSING,img_0001,,"Model lớp 1, conf=0.946, IoU=0.000","{""conf"": 0.9458, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0004,,"Model lớp 0, conf=0.890, IoU=0.000","{""conf"": 0.8897, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0004,,"Model lớp 0, conf=0.789, IoU=0.000","{""conf"": 0.789, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0012,,"Model lớp 1, conf=0.671, IoU=0.000","{""conf"": 0.6714, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0014,,"Model lớp 1, conf=0.847, IoU=0.000","{""conf"": 0.8469, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0015,,"Model lớp 1, conf=0.894, IoU=0.343","{""conf"": 0.8941, ""iou"": 0.3434455934432383}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0018,,"Model lớp 1, conf=0.720, IoU=0.447","{""conf"": 0.7195, ""iou"": 0.4470426447819693}"
+second_opinion,warn,POSSIBLE_WRONG_CLASS,img_0019,,"Model lớp 0, conf=0.941, IoU=0.988","{""conf"": 0.941, ""iou"": 0.9876238437642442}"
+second_opinion,warn,POSSIBLE_WRONG_CLASS,img_0020,,"Model lớp 3, conf=0.947, IoU=0.943","{""conf"": 0.9474, ""iou"": 0.9433212534931074}"
+second_opinion,warn,POSSIBLE_MISSING,img_0020,,"Model lớp 1, conf=0.841, IoU=0.000","{""conf"": 0.8408, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_WRONG_CLASS,img_0021,,"Model lớp 1, conf=0.934, IoU=0.972","{""conf"": 0.9339, ""iou"": 0.9718555032547089}"
+second_opinion,warn,POSSIBLE_MISSING,img_0022,,"Model lớp 0, conf=0.848, IoU=0.000","{""conf"": 0.8483, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0024,7,Nhãn không khớp dự đoán; IoU tốt nhất 0.097,"{""iou"": 0.09720377024295698}"
+second_opinion,warn,POSSIBLE_MISSING,img_0028,,"Model lớp 1, conf=0.941, IoU=0.000","{""conf"": 0.9406, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0030,,"Model lớp 1, conf=0.686, IoU=0.000","{""conf"": 0.686, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0030,9,Nhãn không khớp dự đoán; IoU tốt nhất 0.085,"{""iou"": 0.0847230557472658}"
+second_opinion,warn,POSSIBLE_MISSING,img_0032,,"Model lớp 1, conf=0.608, IoU=0.000","{""conf"": 0.608, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_WRONG_CLASS,img_0034,,"Model lớp 1, conf=0.907, IoU=0.892","{""conf"": 0.9066, ""iou"": 0.8922417088993325}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0035,2,Nhãn không khớp dự đoán; IoU tốt nhất 0.000,"{""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0036,,"Model lớp 1, conf=0.873, IoU=0.427","{""conf"": 0.8733, ""iou"": 0.42652477076992373}"
+second_opinion,warn,POSSIBLE_WRONG_CLASS,img_0037,,"Model lớp 0, conf=0.913, IoU=0.969","{""conf"": 0.9134, ""iou"": 0.9686454400251667}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0038,,"Model lớp 1, conf=0.921, IoU=0.397","{""conf"": 0.9212, ""iou"": 0.39748903279274156}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0045,,"Model lớp 1, conf=0.752, IoU=0.335","{""conf"": 0.7519, ""iou"": 0.33476178349319957}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0046,,"Model lớp 1, conf=0.893, IoU=0.382","{""conf"": 0.8928, ""iou"": 0.3823233906495968}"
+second_opinion,warn,POSSIBLE_MISSING,img_0047,,"Model lớp 1, conf=0.717, IoU=0.000","{""conf"": 0.717, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0050,,"Model lớp 1, conf=0.929, IoU=0.000","{""conf"": 0.929, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0050,1,Nhãn không khớp dự đoán; IoU tốt nhất 0.000,"{""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0054,,"Model lớp 0, conf=0.740, IoU=0.379","{""conf"": 0.7403, ""iou"": 0.37880261832775625}"
+second_opinion,warn,POSSIBLE_MISSING,img_0057,,"Model lớp 1, conf=0.889, IoU=0.000","{""conf"": 0.8893, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0058,,"Model lớp 1, conf=0.729, IoU=0.000","{""conf"": 0.7285, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0062,,"Model lớp 1, conf=0.805, IoU=0.471","{""conf"": 0.8051, ""iou"": 0.4710198159663405}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0062,,"Model lớp 1, conf=0.637, IoU=0.352","{""conf"": 0.6374, ""iou"": 0.35188320151554736}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0064,,"Model lớp 1, conf=0.915, IoU=0.450","{""conf"": 0.9147, ""iou"": 0.45010497657783627}"
+second_opinion,warn,POSSIBLE_MISSING,img_0065,,"Model lớp 3, conf=0.941, IoU=0.000","{""conf"": 0.9413, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0066,,"Model lớp 3, conf=0.946, IoU=0.000","{""conf"": 0.9463, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0066,3,Nhãn không khớp dự đoán; IoU tốt nhất 0.000,"{""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0067,,"Model lớp 1, conf=0.835, IoU=0.000","{""conf"": 0.8354, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0068,,"Model lớp 1, conf=0.885, IoU=0.000","{""conf"": 0.8851, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0068,7,Nhãn không khớp dự đoán; IoU tốt nhất 0.215,"{""iou"": 0.21545919793778642}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0069,2,Nhãn không khớp dự đoán; IoU tốt nhất 0.000,"{""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_WRONG_CLASS,img_0070,,"Model lớp 1, conf=0.948, IoU=0.987","{""conf"": 0.9484, ""iou"": 0.987342362600333}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0070,6,Nhãn không khớp dự đoán; IoU tốt nhất 0.099,"{""iou"": 0.09879202754359934}"
+second_opinion,warn,POSSIBLE_WRONG_CLASS,img_0071,,"Model lớp 1, conf=0.925, IoU=0.988","{""conf"": 0.925, ""iou"": 0.9876598719924807}"
+second_opinion,warn,POSSIBLE_WRONG_CLASS,img_0075,,"Model lớp 1, conf=0.914, IoU=0.971","{""conf"": 0.9144, ""iou"": 0.9706424864485889}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0077,,"Model lớp 1, conf=0.735, IoU=0.402","{""conf"": 0.7352, ""iou"": 0.4016279290671218}"
+second_opinion,warn,POSSIBLE_MISSING,img_0078,,"Model lớp 0, conf=0.853, IoU=0.000","{""conf"": 0.8527, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0078,2,Nhãn không khớp dự đoán; IoU tốt nhất 0.089,"{""iou"": 0.08937680960113442}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0082,,"Model lớp 1, conf=0.808, IoU=0.483","{""conf"": 0.8085, ""iou"": 0.4834327463044831}"
+second_opinion,warn,POSSIBLE_WRONG_CLASS,img_0083,,"Model lớp 0, conf=0.695, IoU=0.948","{""conf"": 0.6948, ""iou"": 0.9475003856805791}"
+second_opinion,warn,POSSIBLE_MISSING,img_0086,,"Model lớp 1, conf=0.884, IoU=0.000","{""conf"": 0.884, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0090,,"Model lớp 1, conf=0.715, IoU=0.463","{""conf"": 0.7153, ""iou"": 0.4628350771458936}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0091,7,Nhãn không khớp dự đoán; IoU tốt nhất 0.257,"{""iou"": 0.25691703662875975}"
+second_opinion,warn,POSSIBLE_MISSING,img_0092,,"Model lớp 0, conf=0.907, IoU=0.000","{""conf"": 0.9069, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0092,2,Nhãn không khớp dự đoán; IoU tốt nhất 0.000,"{""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0092,10,Nhãn không khớp dự đoán; IoU tốt nhất 0.000,"{""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0093,,"Model lớp 1, conf=0.706, IoU=0.000","{""conf"": 0.7063, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0094,,"Model lớp 1, conf=0.728, IoU=0.394","{""conf"": 0.7281, ""iou"": 0.3939070894040368}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0095,6,Nhãn không khớp dự đoán; IoU tốt nhất 0.000,"{""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0096,,"Model lớp 1, conf=0.918, IoU=0.469","{""conf"": 0.9178, ""iou"": 0.46865963956827933}"
+second_opinion,warn,POSSIBLE_MISSING,img_0096,,"Model lớp 1, conf=0.859, IoU=0.000","{""conf"": 0.8585, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0099,,"Model lớp 1, conf=0.877, IoU=0.000","{""conf"": 0.8766, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0099,15,Nhãn không khớp dự đoán; IoU tốt nhất 0.000,"{""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0100,,"Model lớp 1, conf=0.624, IoU=0.000","{""conf"": 0.6243, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0100,4,Nhãn không khớp dự đoán; IoU tốt nhất 0.035,"{""iou"": 0.03467085612461127}"
+second_opinion,warn,POSSIBLE_MISSING,img_0103,,"Model lớp 1, conf=0.925, IoU=0.000","{""conf"": 0.9246, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0104,,"Model lớp 1, conf=0.930, IoU=0.000","{""conf"": 0.9298, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0108,1,Nhãn không khớp dự đoán; IoU tốt nhất 0.299,"{""iou"": 0.29947385002675214}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0111,2,Nhãn không khớp dự đoán; IoU tốt nhất 0.000,"{""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_WRONG_CLASS,img_0112,,"Model lớp 1, conf=0.793, IoU=0.927","{""conf"": 0.793, ""iou"": 0.9272315143510558}"
+second_opinion,warn,POSSIBLE_MISSING,img_0116,,"Model lớp 1, conf=0.795, IoU=0.000","{""conf"": 0.7946, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0117,,"Model lớp 1, conf=0.674, IoU=0.000","{""conf"": 0.6739, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0119,,"Model lớp 1, conf=0.706, IoU=0.408","{""conf"": 0.706, ""iou"": 0.40835910199990577}"
+second_opinion,warn,POSSIBLE_MISSING,img_0121,,"Model lớp 1, conf=0.764, IoU=0.000","{""conf"": 0.7641, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_WRONG_CLASS,img_0124,,"Model lớp 0, conf=0.928, IoU=0.967","{""conf"": 0.9281, ""iou"": 0.9668866043807952}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0125,,"Model lớp 1, conf=0.833, IoU=0.421","{""conf"": 0.8328, ""iou"": 0.42099341975298876}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0127,,"Model lớp 1, conf=0.884, IoU=0.437","{""conf"": 0.8845, ""iou"": 0.4371643526339286}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0127,,"Model lớp 1, conf=0.705, IoU=0.377","{""conf"": 0.7047, ""iou"": 0.376903504942473}"
+second_opinion,warn,POSSIBLE_MISSING,img_0127,,"Model lớp 1, conf=0.684, IoU=0.000","{""conf"": 0.6843, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0131,,"Model lớp 1, conf=0.892, IoU=0.000","{""conf"": 0.8922, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0131,,"Model lớp 1, conf=0.658, IoU=0.333","{""conf"": 0.6577, ""iou"": 0.3331717308000165}"
+second_opinion,warn,POSSIBLE_MISSING,img_0134,,"Model lớp 1, conf=0.680, IoU=0.000","{""conf"": 0.6804, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0142,,"Model lớp 1, conf=0.658, IoU=0.428","{""conf"": 0.658, ""iou"": 0.42779459598869807}"
+second_opinion,warn,POSSIBLE_MISSING,img_0144,,"Model lớp 1, conf=0.964, IoU=0.000","{""conf"": 0.9637, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0144,1,Nhãn không khớp dự đoán; IoU tốt nhất 0.257,"{""iou"": 0.25743081038312365}"
+second_opinion,warn,POSSIBLE_MISSING,img_0145,,"Model lớp 1, conf=0.938, IoU=0.000","{""conf"": 0.9382, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0147,,"Model lớp 1, conf=0.784, IoU=0.000","{""conf"": 0.7842, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0149,3,Nhãn không khớp dự đoán; IoU tốt nhất 0.000,"{""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0150,3,Nhãn không khớp dự đoán; IoU tốt nhất 0.232,"{""iou"": 0.23162072486516988}"
+second_opinion,warn,POSSIBLE_MISSING,img_0151,,"Model lớp 3, conf=0.725, IoU=0.000","{""conf"": 0.7252, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0155,2,Nhãn không khớp dự đoán; IoU tốt nhất 0.000,"{""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0155,3,Nhãn không khớp dự đoán; IoU tốt nhất 0.000,"{""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0157,,"Model lớp 1, conf=0.896, IoU=0.000","{""conf"": 0.8965, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0159,,"Model lớp 1, conf=0.929, IoU=0.000","{""conf"": 0.9289, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_WRONG_CLASS,img_0160,,"Model lớp 2, conf=0.778, IoU=0.951","{""conf"": 0.7778, ""iou"": 0.950587895231265}"
+second_opinion,warn,POSSIBLE_MISSING,img_0160,,"Model lớp 2, conf=0.777, IoU=0.000","{""conf"": 0.7768, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0164,,"Model lớp 1, conf=0.783, IoU=0.000","{""conf"": 0.7829, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0165,,"Model lớp 1, conf=0.822, IoU=0.000","{""conf"": 0.8218, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0171,,"Model lớp 0, conf=0.729, IoU=0.427","{""conf"": 0.7292, ""iou"": 0.4269310771759664}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0171,,"Model lớp 0, conf=0.639, IoU=0.330","{""conf"": 0.6386, ""iou"": 0.3299088670356399}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0175,,"Model lớp 1, conf=0.900, IoU=0.422","{""conf"": 0.8997, ""iou"": 0.4215077681105207}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0177,2,Nhãn không khớp dự đoán; IoU tốt nhất 0.000,"{""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0178,,"Model lớp 1, conf=0.932, IoU=0.000","{""conf"": 0.9324, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0179,,"Model lớp 1, conf=0.753, IoU=0.366","{""conf"": 0.753, ""iou"": 0.36607977137319275}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0180,5,Nhãn không khớp dự đoán; IoU tốt nhất 0.000,"{""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_WRONG_CLASS,img_0183,,"Model lớp 1, conf=0.908, IoU=0.935","{""conf"": 0.9078, ""iou"": 0.9351925182013927}"
+second_opinion,warn,POSSIBLE_MISSING,img_0184,,"Model lớp 1, conf=0.791, IoU=0.000","{""conf"": 0.7909, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_WRONG_CLASS,img_0185,,"Model lớp 1, conf=0.680, IoU=0.902","{""conf"": 0.6802, ""iou"": 0.9024438107558065}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0185,10,Nhãn không khớp dự đoán; IoU tốt nhất 0.000,"{""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0187,,"Model lớp 1, conf=0.933, IoU=0.000","{""conf"": 0.9328, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0189,4,Nhãn không khớp dự đoán; IoU tốt nhất 0.009,"{""iou"": 0.00916243131024922}"
+second_opinion,warn,POSSIBLE_WRONG_CLASS,img_0191,,"Model lớp 1, conf=0.908, IoU=0.948","{""conf"": 0.908, ""iou"": 0.9475916986917163}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0193,6,Nhãn không khớp dự đoán; IoU tốt nhất 0.017,"{""iou"": 0.016998858406802764}"
+second_opinion,warn,POSSIBLE_MISSING,img_0194,,"Model lớp 0, conf=0.602, IoU=0.000","{""conf"": 0.602, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0199,,"Model lớp 1, conf=0.832, IoU=0.000","{""conf"": 0.8316, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0200,,"Model lớp 1, conf=0.691, IoU=0.434","{""conf"": 0.6911, ""iou"": 0.43446286020480024}"
+second_opinion,warn,POSSIBLE_WRONG_CLASS,img_0202,,"Model lớp 1, conf=0.944, IoU=0.989","{""conf"": 0.944, ""iou"": 0.9893647523120435}"
+second_opinion,warn,POSSIBLE_MISSING,img_0204,,"Model lớp 1, conf=0.915, IoU=0.000","{""conf"": 0.9149, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0204,1,Nhãn không khớp dự đoán; IoU tốt nhất 0.120,"{""iou"": 0.11950378654574029}"
+second_opinion,warn,POSSIBLE_FALSE_POS,img_0206,1,Nhãn không khớp dự đoán; IoU tốt nhất 0.108,"{""iou"": 0.10827808564215993}"
+second_opinion,warn,POSSIBLE_WRONG_CLASS,img_0208,,"Model lớp 1, conf=0.922, IoU=0.939","{""conf"": 0.9221, ""iou"": 0.9385697990009533}"
+second_opinion,warn,POSSIBLE_MISSING,img_0210,,"Model lớp 0, conf=0.666, IoU=0.000","{""conf"": 0.6665, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0211,,"Model lớp 0, conf=0.746, IoU=0.000","{""conf"": 0.7464, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_WRONG_CLASS,img_0212,,"Model lớp 1, conf=0.838, IoU=0.768","{""conf"": 0.8384, ""iou"": 0.7675689028874688}"
+second_opinion,warn,POSSIBLE_MISSING,img_0215,,"Model lớp 1, conf=0.936, IoU=0.000","{""conf"": 0.9357, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0217,,"Model lớp 0, conf=0.945, IoU=0.342","{""conf"": 0.9453, ""iou"": 0.34195420416882055}"
+second_opinion,warn,POSSIBLE_LOOSE_BOX,img_0217,,"Model lớp 0, conf=0.668, IoU=0.358","{""conf"": 0.6679, ""iou"": 0.3575239832937389}"
+second_opinion,warn,POSSIBLE_MISSING,img_0218,,"Model lớp 1, conf=0.837, IoU=0.000","{""conf"": 0.8369, ""iou"": 0.0}"
+second_opinion,warn,POSSIBLE_MISSING,img_0220,,"Model lớp 1, conf=0.819, IoU=0.000","{""conf"": 0.8191, ""iou"": 0.0}"

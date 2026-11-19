@@ -1,0 +1,9 @@
+{
+  "manifest_raw_sha1": "e3d86a0ba7c2ea052eba4eea881809c9c56c2920",
+  "manifest_lf_sha1": "e3d86a0ba7c2ea052eba4eea881809c9c56c2920",
+  "clean_result_sha1": {
+    "clean_seed0.json": "e3d86a0ba7c2ea052eba4eea881809c9c56c2920",
+    "clean_seed1.json": "e3d86a0ba7c2ea052eba4eea881809c9c56c2920"
+  },
+  "all_match": true
+}

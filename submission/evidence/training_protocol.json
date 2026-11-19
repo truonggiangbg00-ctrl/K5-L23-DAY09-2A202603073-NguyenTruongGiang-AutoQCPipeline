@@ -1,0 +1,64 @@
+{
+  "variants": [
+    "raw",
+    "clean"
+  ],
+  "seeds": [
+    0,
+    1
+  ],
+  "epochs": 20,
+  "imgsz": 640,
+  "batch": 4,
+  "device": "0",
+  "model": "work/models/yolo26n.pt",
+  "input_sha256": {
+    "configs/pipeline.yaml": "0a15dd4fab7a1e3e2a4e1600bff3e991c88b9e957f3db7e0cae777be33d9bce6",
+    "submission/export/clean_v1/manifest.json": "b8eb81f1672b9fa0dd4c4c6064cd467304b4f86fe0015a11ced6da3dfcb8c462",
+    "scripts/train_compare.py": "b2af9afe2091c9b5532986742173a628015a369db8c26f56e851f08d0d46d74c",
+    "scripts/materialize_dataset.py": "784c8372a150754f945e8d797abe3872aebfcf61cccdc401c2d45b2aadc4e84a"
+  },
+  "note": "Both variants use the same gold_val and test splits; raw is the uncorrected control and may include leakage.",
+  "python": "3.10.11",
+  "torch": "2.11.0+cu128",
+  "torchvision": "0.26.0+cu128",
+  "ultralytics": "8.4.214",
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU, 4096 MiB",
+  "weights_sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+  "command": "python -X utf8 scripts/train_compare.py --variants raw clean --seeds 0 1 --epochs 20 --imgsz 640 --batch 4 --device 0 --model work/models/yolo26n.pt --skip-existing",
+  "input_fingerprints_unchanged": true,
+  "manifest_line_ending_normalization": {
+    "reason": "Canonical LF makes original train raw-byte checksum agree with original checker newline-normalized checksum. No JSON values or labels changed.",
+    "before_sha256": "a11131ed73d5832704adf03a438692ce093ec66ecb1f96e1763a32740d6f93d6",
+    "after_sha256": "b8eb81f1672b9fa0dd4c4c6064cd467304b4f86fe0015a11ced6da3dfcb8c462",
+    "clean_runs_retrained": true
+  },
+  "completed_runs": [
+    {
+      "run": "raw_seed0",
+      "epochs_completed": 20,
+      "best_weights_sha256": "c177ae43749de558a6934c7d4400cfc21519908988b32f4d83226948f2fd1eda",
+      "result_sha256": "dffaffd8b62afe2347578d87b6d50380a80818ef37cd8b41e443c13495d90c9b"
+    },
+    {
+      "run": "raw_seed1",
+      "epochs_completed": 20,
+      "best_weights_sha256": "454b83bcf71628227d5dc8f93a64f1087fe924a34237af0aa077759ab27bc60a",
+      "result_sha256": "21fe15b1b296aa5ab74839b2619d64f05240f1f8f7ceaa91e6d8f0e84f19d5c1"
+    },
+    {
+      "run": "clean_seed0",
+      "epochs_completed": 20,
+      "best_weights_sha256": "5bdbbf11be35c72df770ad834dd620507217fcab974844eaf3278d294e907a18",
+      "result_sha256": "3720af5a0a652aa674cecc2fd1aa77114138ebf3c252c240fb4a36adad5428df"
+    },
+    {
+      "run": "clean_seed1",
+      "epochs_completed": 20,
+      "best_weights_sha256": "3ed2fb2d9917be30b8b228be918f49da3d63410ae8c26f9b99652ee0c915b948",
+      "result_sha256": "9d7a0d64579cf8e75d0fed4d115e2313fc8789cae3d3f8f70cceb67138c8fd27"
+    }
+  ],
+  "clean_retraining_exit_code": 0,
+  "artifact_label_checksums_verified": 205
+}

@@ -1,0 +1,6 @@
+Windows compatibility: chuẩn hóa đường dẫn file mẫu sang POSIX; giữ toàn bộ kiểm tra.
+pytest: 79 passed in 40.41s
+kết luận pipeline: Hold - 38/205 ảnh còn cảnh báo chưa duyệt (18.54%) >= ngưỡng 10.00%
+
+
+0 lỗi, 0 cảnh báo

@@ -2,7 +2,19 @@
   <img src="docs/assets/hero.png" alt="Day 09 Lab: pipeline kiểm nhãn tự động" width="100%">
 </p>
 
-# Day 09 Lab — Pipeline kiểm nhãn tự động
+# Day 09 Lab — Nguyễn Trường Giang: 2A202603073 - Nguyễn Trường Giang
+
+## Kết quả bài đã hoàn thiện
+
+- Kiểm tra cuối: **79/79 test, 0 lỗi, 0 cảnh báo**, gồm cả phần train.
+- Đã triển khai 4 module, calibration và pipeline; xem [báo cáo](submission/REPORT.md) và [hướng dẫn đọc code/chạy lại](HUONG_DAN_BAI_DA_LAM.md).
+- Dataset **Hold**: 205/224 ảnh được giữ, 0 lỗi bắt buộc, 38/205 ảnh còn cảnh báo chưa duyệt.
+- Đã train raw/clean, mỗi biến thể 2 seed × 20 epoch, batch 4, ảnh 640 px, RTX 3050.
+- mAP50: raw **0,623 ± 0,087**, clean **0,680 ± 0,016**. Mức tăng chưa đủ để khẳng định cải thiện ổn định với chỉ hai seed.
+- [Bảng so sánh tự sinh](submission/results/comparison.md) · [Biểu đồ](submission/results/comparison.png).
+- Windows: `.\.venv\Scripts\python.exe -X utf8 scripts/check_submission_windows.py` chạy kiểm đầy đủ. Launcher chỉ xử lý lỗi dấu phân cách đường dẫn trong checker gốc; giữ nguyên file đề.
+
+
 
 <p align="center">
   <img alt="cá nhân" src="https://img.shields.io/badge/lab-cá%20nhân-0b1f3a">

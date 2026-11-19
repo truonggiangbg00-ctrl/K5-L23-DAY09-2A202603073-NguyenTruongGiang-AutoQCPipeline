@@ -1,0 +1,14 @@
+{
+  "variant": "clean",
+  "copied_images": 205,
+  "usable_images": 205,
+  "cache_results": [
+    205,
+    0,
+    4,
+    0,
+    205
+  ],
+  "loader_messages": [],
+  "note": "Read only the training loader cache; source data and official result JSON are not changed."
+}
