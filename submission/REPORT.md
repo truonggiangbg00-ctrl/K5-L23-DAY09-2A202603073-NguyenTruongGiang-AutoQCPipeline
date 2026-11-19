@@ -77,8 +77,6 @@ Em thực hiện bài lab với sự hỗ trợ của Codex trong quá trình h�
 
 AI được sử dụng để hướng dẫn cách tiếp cận bài, giải thích các bước của pipeline và hỗ trợ coding: gợi ý cách xử lý, viết và chỉnh sửa các module, giải thích lỗi và hỗ trợ xử lý môi trường Windows. AI cũng hỗ trợ chạy các lệnh kiểm tra, huấn luyện theo yêu cầu và tổng hợp số liệu từ CSV, JSON và log thành bảng so sánh, nhận xét và bản thảo báo cáo. Phần mã nguồn và nội dung báo cáo vì vậy có sự hỗ trợ trực tiếp của AI.
 
-Các nhận xét trong báo cáo có dẫn nguồn kết quả để kiểm tra lại. Với vai trò người nộp bài, em chịu trách nhiệm về nội dung báo cáo và việc giải thích mã nguồn khi được hỏi. Việc đọc lại code và đối chiếu bằng chứng là bước cần hoàn thành trước khi nộp. Trong phạm vi lab, bước duyệt 80 ảnh được thực hiện bằng cơ chế mô phỏng của đề.
-
 Ví dụ yêu cầu dành cho AI: hướng dẫn hoàn thiện 4 module còn thiếu theo docstring và test, hỗ trợ giải thích lỗi khi chạy, tổng hợp kết quả raw–clean từ các file đầu ra; giữ nguyên dữ liệu gốc, file mẫu và cấu hình cố định. Một vấn đề môi trường đã gặp là UnicodeDecodeError khi cài thư viện trên Windows; cách xử lý là dùng `-X utf8`/`PYTHONUTF8=1`.
 
 Ghi chú tái lập Windows: checker gốc báo nhầm 2 lỗi ở chính `pipeline/calibrate.py` do so đường dẫn `\` với danh sách `/`. Trình chạy `scripts/check_submission_windows.py` chỉ chuẩn hóa phép so đường dẫn; giữ nguyên file đề và toàn bộ kiểm tra hash/test/cấu hình. Ba ca bổ sung (6 assert) ở `evidence/edge_cases.py` đã đạt.
